@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Table of Phone Numbers</title>
+  </head>
+
+  <body>
+    <h1>Table of Email IDs</h1>
+
+
+      <script language="javascript">
+      //var selection;
+      var emails;
+      function addOption(selectbox,text,value )
+      {
+	       var optn = document.createElement("OPTION");
+	       optn.text = text;
+	       optn.value = value;
+	       selectbox.options.add(optn);
+        }
+
+        function addOption_list(){
+                for (var i=0; i < emails.length;++i){
+                addOption(document.drop_list.eMail_ids, emails[i], emails[i]);
+              }
+                //document.drop_list.eMail_ids.emails[i].selected=true;
+        }
+</script>
+    <body onLoad="addOption_list()";>
+      Select the contact email you want to add.
+      <br><br>
+      <FORM name="drop_list" action="yourpage.php" method="POST" >
+
+          <SELECT  NAME="eMail_ids">
+            <Option value="" >Email IDs</option>
+          </SELECT>
+    </form>
+   </body>
+</html>
