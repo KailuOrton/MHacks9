@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Table of Phone Numbers</title>
+    <title>DropDown</title>
   </head>
 
   <body>
@@ -9,30 +9,43 @@
 
       <script language="javascript">
       //var selection;
-      var emails;
+      var emails = [3,4,5,2,4,6,6,7,8];
+      var value;
       function addOption(selectbox,text,value )
       {
 	       var optn = document.createElement("OPTION");
 	       optn.text = text;
 	       optn.value = value;
 	       selectbox.options.add(optn);
-        }
+      }
 
         function addOption_list(){
-                for (var i=0; i < emails.length;++i){
+              for (var i=0; i < emails.length;++i){
                 addOption(document.drop_list.eMail_ids, emails[i], emails[i]);
               }
-                //document.drop_list.eMail_ids.emails[i].selected=true;
+              document.drop_list.eMail_ids.onchange = function(e){
+                value = e.target.value;
+                console.log(value);
+              }
+        }
+
+        function secondPage(){
+
+          
+
         }
 </script>
     <body onLoad="addOption_list()";>
       Select the contact email you want to add.
+
+
+
       <br><br>
       <FORM name="drop_list" action="yourpage.php" method="POST" >
-
           <SELECT  NAME="eMail_ids">
             <Option value="" >Email IDs</option>
           </SELECT>
     </form>
+    <button id="ok" onclick = "secondPage()">OK</button>
    </body>
 </html>
