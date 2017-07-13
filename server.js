@@ -11,7 +11,8 @@ var corsOptions = {
 };
 
 app.get('/typeahead',cors(corsOptions),require('./api/typeahead'));
-app.get('./resolver',cors(corsOptions),require('./api/resolver'));
+app.get('/resolver',cors(corsOptions),require('./api/resolver'));
+app.use(express.static('public'));
 
 if(process.env.NODE_ENV === 'production'){
     app.listen(process.env.PORT || 9145);
